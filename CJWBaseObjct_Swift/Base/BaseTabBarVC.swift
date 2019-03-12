@@ -34,8 +34,7 @@ class BaseTabBarVC: UITabBarController {
         //        setChildViewController(RedPackageViewController(), title: "", imageName: "redpackage")
         setChildViewController(Test2ViewController(), title: "tabbar3", imageName: "home_tabbar")
         setChildViewController(Test3ViewController(), title: "tabbar4", imageName: "home_tabbar")
-        // tabBar 是 readonly 属性，不能直接修改，利用 KVC 把 readonly 属性的权限改过来
-        //        setValue(MyTabBar(), forKey: "tabBar")
+
     }
     
     

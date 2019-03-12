@@ -21,6 +21,7 @@
 		311A90B1222A5EEF00EE17F9 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311A90AA222A5EEF00EE17F9 /* UIViewExtension.swift */; };
 		311A90B2222A5EEF00EE17F9 /* BaseRefreshCollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311A90AB222A5EEF00EE17F9 /* BaseRefreshCollectionVC.swift */; };
 		311A90B3222A5EEF00EE17F9 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 311A90AC222A5EEF00EE17F9 /* BaseTableViewCell.swift */; };
+		31CEE1D02237E48F00352CD6 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31CEE1CF2237E48E00352CD6 /* BaseCollectionViewCell.swift */; };
 		31F109C0222A73CD0079C49A /* TestRefreshVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F109BF222A73CD0079C49A /* TestRefreshVC.swift */; };
 		31F109C2222A73F70079C49A /* TestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F109C1222A73F70079C49A /* TestTableViewCell.swift */; };
 		31F109C8222A777A0079C49A /* DeviceHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F109C7222A777A0079C49A /* DeviceHelpers.swift */; };
@@ -72,6 +73,7 @@
 		311A90AA222A5EEF00EE17F9 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		311A90AB222A5EEF00EE17F9 /* BaseRefreshCollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRefreshCollectionVC.swift; sourceTree = "<group>"; };
 		311A90AC222A5EEF00EE17F9 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		31CEE1CF2237E48E00352CD6 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		31F109BF222A73CD0079C49A /* TestRefreshVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestRefreshVC.swift; sourceTree = "<group>"; };
 		31F109C1222A73F70079C49A /* TestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTableViewCell.swift; sourceTree = "<group>"; };
 		31F109C3222A76A20079C49A /* CJWBaseObjct_Swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CJWBaseObjct_Swift-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				311A90AB222A5EEF00EE17F9 /* BaseRefreshCollectionVC.swift */,
 				311A90A8222A5EEF00EE17F9 /* BaseRefreshTableVC.swift */,
 				311A90AC222A5EEF00EE17F9 /* BaseTableViewCell.swift */,
+				31CEE1CF2237E48E00352CD6 /* BaseCollectionViewCell.swift */,
 				311A90A7222A5EEF00EE17F9 /* BaseTableViewHeaderFooterView.swift */,
 				311A90A6222A5EEF00EE17F9 /* BaseView.swift */,
 				311A90A9222A5EEF00EE17F9 /* BaseViewController.swift */,
@@ -408,6 +411,7 @@
 				311A90B3222A5EEF00EE17F9 /* BaseTableViewCell.swift in Sources */,
 				311A90B1222A5EEF00EE17F9 /* UIViewExtension.swift in Sources */,
 				31F109CC222A7CC20079C49A /* BaseNavigationVC.swift in Sources */,
+				31CEE1D02237E48F00352CD6 /* BaseCollectionViewCell.swift in Sources */,
 				31F109CE222A7FB90079C49A /* Test2ViewController.swift in Sources */,
 				311A90AE222A5EEF00EE17F9 /* BaseTableViewHeaderFooterView.swift in Sources */,
 				311A90B0222A5EEF00EE17F9 /* BaseViewController.swift in Sources */,
