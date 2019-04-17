@@ -14,13 +14,9 @@ class BaseRefreshTableVC: BaseViewController {
 
     public let tableView = UITableView()
     public var dataSource = [Any]()
-    public var pageIndex = 1
+    public var pageIndex = 0
     public func refreshData(completionHandler: @escaping (_ response:[Any]) ->() ){}
-    
-    
-    private var cellConfigBlock: CellConfigHandler?
-    
-    ///
+
     private var cell : AnyClass?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +37,7 @@ class BaseRefreshTableVC: BaseViewController {
         tableView.mj_header = MJRefreshNormalHeader.init(refreshingBlock: {
             self.tableView.mj_header.endRefreshing()
             self.tableView.mj_footer.endRefreshing()
-            self.pageIndex = 1;
+            self.pageIndex = 0;
             self.refreshData(completionHandler: { (obj) in
                 self.dataSource = obj
                 self.tableView.reloadData()
@@ -68,7 +64,6 @@ class BaseRefreshTableVC: BaseViewController {
         self.tableView.estimatedRowHeight = height
         tableView.register(cell.self , forCellReuseIdentifier: String(describing: cell.self))
 
-        self.cellConfigBlock = cellConfig
     }
     
 
@@ -81,9 +76,9 @@ extension BaseRefreshTableVC:UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: self.cell!), for: indexPath)
-        if let model = cellConfigBlock?(indexPath) {
-            (cell as? ConfigurableCell)?.configeWithModel(model: model)
-        }
+      
+        (cell as? ConfigurableCell)?.configeWithModel(model: self.dataSource[indexPath.row])
+        
         return cell
     }
 }

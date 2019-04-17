@@ -65,7 +65,10 @@ extension BaseRefreshCollectionVC :UICollectionViewDataSource,UICollectionViewDe
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = UICollectionViewCell()
-        return cell
+        let collectionCell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: self.cell.self), for: indexPath)
+        
+        (collectionCell as? BaseCollectionViewCell)?.configeModel(mode: self.dataSource[indexPath.item])
+        
+        return collectionCell
     }
 }

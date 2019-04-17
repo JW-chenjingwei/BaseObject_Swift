@@ -21,20 +21,15 @@ class TestRefreshVC: BaseRefreshTableVC {
     
     override func refreshData(completionHandler: @escaping ([Any]) -> ()) {
         
-        //网络请求获取数据，pageIndex是请求页数直接传
+        //网络请求获取数据，pageIndex是基类自动计算好的页数，直接传给网络请求参数即可
+
         var index = [""]
-        for item in  0...pageIndex * 10{
+        for item in  0...10{
             index.append("\(item)")
         }
         completionHandler(index)
     }
 
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: TestTableViewCell.self), for: indexPath) as! TestTableViewCell
-//
-//        cell.configeWithModel(model: dataSource[indexPath.row])
-//        return cell
-//    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = Test2ViewController()
