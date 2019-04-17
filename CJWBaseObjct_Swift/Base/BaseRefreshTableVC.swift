@@ -7,12 +7,18 @@
 //
 
 import UIKit
+
+typealias CellConfigHandler = (IndexPath)->(Any?)
+
 class BaseRefreshTableVC: BaseViewController {
 
     public let tableView = UITableView()
     public var dataSource = [Any]()
     public var pageIndex = 1
     public func refreshData(completionHandler: @escaping (_ response:[Any]) ->() ){}
+    
+    
+    private var cellConfigBlock: CellConfigHandler?
     
     ///
     private var cell : AnyClass?
@@ -57,11 +63,12 @@ class BaseRefreshTableVC: BaseViewController {
     }
     
 
-    public func setup(estimatedRowHeight height:CGFloat , cell:AnyClass){
+    public func setup(estimatedRowHeight height:CGFloat , cell:AnyClass, cellConfig: @escaping CellConfigHandler){
         self.cell = cell;
         self.tableView.estimatedRowHeight = height
         tableView.register(cell.self , forCellReuseIdentifier: String(describing: cell.self))
 
+        self.cellConfigBlock = cellConfig
     }
     
 
@@ -73,11 +80,10 @@ extension BaseRefreshTableVC:UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:BaseTableViewCell = tableView.dequeueReusableCell(withIdentifier:String(describing: self.cell.self) , for: indexPath) as! BaseTableViewCell
-        
-        cell.configeWithModel(model: dataSource[indexPath.row])
+        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: self.cell!), for: indexPath)
+        if let model = cellConfigBlock?(indexPath) {
+            (cell as? ConfigurableCell)?.configeWithModel(model: model)
+        }
         return cell
     }
-    
-    
 }

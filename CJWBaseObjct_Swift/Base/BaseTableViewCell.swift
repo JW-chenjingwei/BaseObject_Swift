@@ -8,7 +8,15 @@
 
 import UIKit
 
-class BaseTableViewCell: UITableViewCell {
+protocol ConfigurableCell {
+    func configeWithModel(model:Any)
+    
+    func setupViews()
+    
+    func setupLayout()
+}
+
+class BaseTableViewCell: UITableViewCell, ConfigurableCell {
 
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
